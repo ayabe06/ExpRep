@@ -1,7 +1,7 @@
 %% This is file `custom.cls'.
 
 %%------------------ 文档类声明, 与文件名一致 ------------------
-\ProvidesClass{customDoc}[custom class for physnya]
+\ProvidesClass{customDoc}[custom document class]
 %%------------------------------------------------------------
 
 \LoadClass[12pt]{article}
