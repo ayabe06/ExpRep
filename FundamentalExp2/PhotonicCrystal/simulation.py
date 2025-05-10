@@ -58,7 +58,9 @@ def main():
         mu_r = float(input("输入相对磁导率: "))
         z_0 = float(input("输入阻抗："))
         l = float(input("输入一段电缆的长度："))
-        mixing = bool(input("是否有掺杂？(0) 无 (1) 有  "))
+        mixing = int(input("是否有掺杂？(0) 无 (1) 有  "))
+        if mixing not in [0, 1]:
+            raise ValueError("输入必须为 0 或 1")
         
     except ValueError:
         print("输入无效，请输入有效的数字！")
@@ -98,7 +100,7 @@ def main():
             # 计算 v_L
             v_L_values[int(f/(1e6)-1)] = v_L_calc(a_T, b_T, c_T, d_T, z_0)
         
-        else:
+        if mixing == 1:
             # 写出矩阵元
             a_T = A_T_prime.a
             b_T = A_T_prime.b
